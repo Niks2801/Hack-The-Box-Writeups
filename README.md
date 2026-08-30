@@ -1,9 +1,10 @@
+
 Hack The Box — Grind & Writeups
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Hack%20The%20Box-9FEF00?style=for-the-badge&logo=hackthebox&logoColor=white" alt="Hack The Box">
-  <img src="https://img.shields.io/badge/Focus-Cybersecurity-111111?style=for-the-badge&logo=hackthebox&logoColor=9FEF00" alt="Cybersecurity">
-  <img src="https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Hack%20The%20Box-Writeups-9FEF00?style=for-the-badge&logo=hackthebox&logoColor=white">
+  <img src="https://img.shields.io/badge/Cybersecurity-Offensive%20Security-111111?style=for-the-badge&logo=hackthebox&logoColor=9FEF00">
+  <img src="https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge">
 </p><p align="center">
   <b>Learning offensive security through hands-on labs, one machine at a time.</b>
 </p>---
@@ -16,13 +17,11 @@ The goal isn't simply to collect flags.
 
 «The goal is to understand why the attack worked.»
 
-Each writeup documents the process from initial reconnaissance to enumeration, exploitation, privilege escalation, and flag retrieval.
+Each writeup documents the process from reconnaissance and enumeration to exploitation, privilege escalation, and flag retrieval.
 
 ---
 
 What I'm Learning
-
-This grind is helping me build practical skills in:
 
 - Reconnaissance & Enumeration
 - Web Application Security
@@ -47,7 +46,6 @@ HTB-Writeups/
 ├── README.md
 │
 ├── Starting Point/
-│   │
 │   ├── Command/
 │   │   ├── README.md
 │   │   └── screenshots/
@@ -55,7 +53,6 @@ HTB-Writeups/
 │   └── ...
 │
 ├── Machines/
-│   │
 │   ├── Linux/
 │   ├── Windows/
 │   └── ...
@@ -77,43 +74,18 @@ HTB-Writeups/
 
 Methodology
 
-Rather than immediately searching for an exploit, I try to follow a repeatable methodology.
-
-                         TARGET
-                           │
-                           ▼
-                  RECONNAISSANCE
-                           │
-                           ▼
-                     ENUMERATION
-                           │
-                           ▼
-                  VULNERABILITY
-                    DISCOVERY
-                           │
-                           ▼
-                    EXPLOITATION
-                           │
-                           ▼
-                    INITIAL ACCESS
-                           │
-                           ▼
-                  PRIVILEGE
-                  ESCALATION
-                           │
-                           ▼
-                     FLAGS / PROOF
+I try to follow a repeatable penetration-testing methodology instead of immediately searching for an exploit.
 
 1. Reconnaissance
 
-First, understand the target.
+Understand the target and identify the attack surface.
 
-Typical checks:
+Typical tools:
 
-nmap
-rustscan
-whatweb
-nikto
+Nmap
+RustScan
+WhatWeb
+Nikto
 
 Questions to answer:
 
@@ -127,7 +99,7 @@ Questions to answer:
 
 2. Enumeration
 
-Once services are identified, enumerate them deeply.
+Once services are identified, enumerate them thoroughly.
 
 For web applications:
 
@@ -157,7 +129,7 @@ Interesting Files
 
 3. Vulnerability Discovery
 
-The goal is to connect enumeration results to a possible attack path.
+Connect the enumeration results to potential attack paths.
 
 Examples:
 
@@ -169,7 +141,7 @@ SQL Injection
 File Inclusion
 File Upload Vulnerabilities
 Information Disclosure
-Privilege Escalation Vectors
+Privilege Escalation
 
 ---
 
@@ -177,37 +149,37 @@ Privilege Escalation Vectors
 
 Validate the vulnerability and obtain the required access.
 
-I try to understand:
+The focus is not just:
 
-«Why does this payload work?»
+«"What payload works?"»
 
-rather than simply copying an exploit.
+but:
+
+«"Why does this payload work?"»
+
+Understanding the vulnerability makes it easier to recognize and exploit similar issues on future targets.
 
 ---
 
 5. Initial Access
 
-After gaining access:
+After obtaining access, enumerate the compromised environment.
 
 Identify Current User
-        │
-        ▼
+        ↓
 Enumerate Environment
-        │
-        ▼
+        ↓
 Find Credentials / Secrets
-        │
-        ▼
+        ↓
 Enumerate Local Services
-        │
-        ▼
+        ↓
 Search for Privilege Escalation
 
 ---
 
 6. Privilege Escalation
 
-Depending on the operating system.
+Privilege escalation depends on the target operating system.
 
 Linux:
 
@@ -222,18 +194,18 @@ systeminfo
 net user
 net localgroup administrators
 
-The exact commands used in each writeup will depend on the target.
+The exact techniques and commands will be documented within each individual writeup.
 
 ---
 
 Common Tools
 
 Area| Tools
-Recon| Nmap, RustScan
+Reconnaissance| Nmap, RustScan
 Web| Burp Suite, ffuf, Gobuster
 Enumeration| Netcat, WhatWeb, Nikto
 Exploitation| Metasploit, Custom Scripts
-Passwords| Hashcat, John the Ripper
+Password Cracking| Hashcat, John the Ripper
 Linux| LinPEAS, pspy
 Windows| WinPEAS, PowerView
 File Transfer| wget, curl, Python HTTP Server
@@ -243,16 +215,15 @@ Analysis| CyberChef, Python
 
 Progress
 
-HTB GRIND
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This repository is an ongoing record of my HTB grind.
 
-Starting Point    ███░░░░░░░░░░░░░░░░░  In Progress
-Machines          ░░░░░░░░░░░░░░░░░░░░░  Not Started
-Challenges        ░░░░░░░░░░░░░░░░░░░░░  Not Started
+Area| Status
+Starting Point| In Progress
+Machines| In Progress
+Challenges| In Progress
+Notes & Cheatsheets| In Progress
 
-Goal: Build practical offensive-security skills.
-
-Progress will be updated as new machines and challenges are completed.
+New writeups and notes will be added as I progress.
 
 ---
 
@@ -260,20 +231,17 @@ Writeup Philosophy
 
 Don't just collect flags.
 
-A successful HTB session should leave me with at least one new concept.
+Every HTB session should ideally answer four questions:
 
-What did I learn?
-       │
-       ▼
-Why did it work?
-       │
-       ▼
-How would I recognize it again?
-       │
-       ▼
-How could I exploit it on another target?
+1. What did I discover?
 
-The purpose of these writeups is learning and documentation, not simply reproducing solutions.
+2. Why did the vulnerability exist?
+
+3. Why did the exploit work?
+
+4. How can I recognize the same vulnerability again?
+
+The purpose of these writeups is learning, documentation, and building a reusable security knowledge base.
 
 ---
 
@@ -287,6 +255,6 @@ Do not use these techniques against systems without explicit authorization.
 
 <p align="center">Enumerate → Understand → Exploit → Learn → Repeat
 
-The grind continues.
+<br>The grind continues.
 
 </p>
