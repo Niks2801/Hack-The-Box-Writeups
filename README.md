@@ -39,38 +39,6 @@ What I'm Learning
 
 ---
 
-Repository Structure
-
-HTB-Writeups/
-│
-├── README.md
-│
-├── Starting Point/
-│   ├── Command/
-│   │   ├── README.md
-│   │   └── screenshots/
-│   │
-│   └── ...
-│
-├── Machines/
-│   ├── Linux/
-│   ├── Windows/
-│   └── ...
-│
-├── Challenges/
-│   ├── Web/
-│   ├── Crypto/
-│   ├── Pwn/
-│   ├── Reverse/
-│   └── Forensics/
-│
-└── Notes/
-    ├── Enumeration/
-    ├── Privilege-Escalation/
-    ├── Web/
-    └── Cheatsheets/
-
----
 
 Methodology
 
