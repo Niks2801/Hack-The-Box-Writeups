@@ -20,7 +20,7 @@ The goal isn't simply to collect flags.
 
 > **The goal is to understand why the attack worked.**
 
-Each writeup documents the process from **reconnaissance** and **enumeration** to **exploitation**, **privilege escalation**, and **flag retrieval**.
+Each writeup documents the process from **reconnaissance and enumeration** to **exploitation, privilege escalation, and flag retrieval**.
 
 ---
 
@@ -51,8 +51,13 @@ HTB-Writeups/
 │
 ├── Starting Point/
 │   ├── Command/
-│   │   ├── README.md
-│   │   └── screenshots/
+│   │   └── README.md
+│   │
+│   ├── Dancing/
+│   │   └── README.md
+│   │
+│   ├── Appointment/
+│   │   └── README.md
 │   │
 │   └── ...
 │
@@ -73,34 +78,44 @@ HTB-Writeups/
     ├── Privilege-Escalation/
     ├── Web/
     └── Cheatsheets/
-Methodology
+```
 
-I try to follow a repeatable penetration-testing methodology instead of immediately searching for an exploit.
+---
 
-1. Reconnaissance
+## Methodology
+
+I try to follow a **repeatable penetration-testing methodology** instead of immediately searching for an exploit.
+
+### 1. Reconnaissance
 
 Understand the target and identify the attack surface.
 
-Typical tools:
+#### Typical Tools
 
+```text
 Nmap
 RustScan
 WhatWeb
 Nikto
+```
 
-Questions to answer:
+#### Questions to Answer
 
-What ports are open?
-What services are running?
-What technologies are being used?
-Is there a web application?
-Are there interesting hostnames or domains?
-2. Enumeration
+- What ports are open?
+- What services are running?
+- What technologies are being used?
+- Is there a web application?
+- Are there interesting hostnames or domains?
+
+---
+
+### 2. Enumeration
 
 Once services are identified, enumerate them thoroughly.
 
-For web applications:
+#### For Web Applications
 
+```text
 Directories
 Endpoints
 Parameters
@@ -111,9 +126,11 @@ Authentication
 Cookies
 Headers
 Technology Stack
+```
 
-For Linux and Windows machines:
+#### For Linux and Windows Machines
 
+```text
 Users
 Shares
 Services
@@ -122,12 +139,17 @@ Credentials
 Scheduled Tasks
 SUID / Capabilities
 Interesting Files
-3. Vulnerability Discovery
+```
+
+---
+
+### 3. Vulnerability Discovery
 
 Connect the enumeration results to potential attack paths.
 
-Examples:
+#### Examples
 
+```text
 Exposed Credentials
 Misconfigured Services
 Weak Authentication
@@ -137,24 +159,31 @@ File Inclusion
 File Upload Vulnerabilities
 Information Disclosure
 Privilege Escalation
-4. Exploitation
+```
+
+---
+
+### 4. Exploitation
 
 Validate the vulnerability and obtain the required access.
 
 The focus is not just:
 
-"What payload works?"
+> **"What payload works?"**
 
 but:
 
-"Why does this payload work?"
+> **"Why does this payload work?"**
 
 Understanding the vulnerability makes it easier to recognize and exploit similar issues on future targets.
 
-5. Initial Access
+---
+
+### 5. Initial Access
 
 After obtaining access, enumerate the compromised environment.
 
+```text
 Identify Current User
         |
         v
@@ -168,69 +197,91 @@ Enumerate Local Services
         |
         v
 Search for Privilege Escalation
-6. Privilege Escalation
+```
+
+---
+
+### 6. Privilege Escalation
 
 Privilege escalation depends on the target operating system.
 
-Linux
+#### Linux
+
+```bash
 sudo -l
 find / -perm -4000 2>/dev/null
 getcap -r / 2>/dev/null
-Windows
+```
+
+#### Windows
+
+```cmd
 whoami /all
 systeminfo
 net user
 net localgroup administrators
+```
 
 The exact techniques and commands will be documented within each individual writeup.
 
-Common Tools
-Area	Tools
-Reconnaissance	Nmap, RustScan
-Web	Burp Suite, ffuf, Gobuster
-Enumeration	Netcat, WhatWeb, Nikto
-Exploitation	Metasploit, Custom Scripts
-Password Cracking	Hashcat, John the Ripper
-Linux	LinPEAS, pspy
-Windows	WinPEAS, PowerView
-File Transfer	wget, curl, Python HTTP Server
-Analysis	CyberChef, Python
-Progress
+---
 
-This repository is an ongoing record of my HTB grind.
+## Common Tools
 
-Area	Status
-Starting Point	In Progress
-Machines	In Progress
-Challenges	In Progress
-Notes & Cheatsheets	In Progress
+| Area | Tools |
+|------|-------|
+| Reconnaissance | Nmap, RustScan |
+| Web | Burp Suite, ffuf, Gobuster |
+| Enumeration | Netcat, WhatWeb, Nikto |
+| Exploitation | Metasploit, Custom Scripts |
+| Password Cracking | Hashcat, John the Ripper |
+| Linux | LinPEAS, pspy |
+| Windows | WinPEAS, PowerView |
+| File Transfer | wget, curl, Python HTTP Server |
+| Analysis | CyberChef, Python |
+
+---
+
+## Progress
+
+This repository is an ongoing record of my **HTB grind**.
+
+| Area | Status |
+|------|--------|
+| Starting Point | **In Progress** |
+| Machines | **In Progress** |
+| Challenges | **In Progress** |
+| Notes & Cheatsheets | **In Progress** |
 
 New writeups and notes will be added as I progress.
 
-Writeup Philosophy
-Don't just collect flags.
+---
+
+## Writeup Philosophy
+
+### Don't Just Collect Flags
 
 Every HTB session should ideally answer four questions:
 
-What did I discover?
-Why did the vulnerability exist?
-Why did the exploit work?
-How can I recognize the same vulnerability again?
+1. **What did I discover?**
+2. **Why did the vulnerability exist?**
+3. **Why did the exploit work?**
+4. **How can I recognize the same vulnerability again?**
 
-The purpose of these writeups is learning, documentation, and building a reusable security knowledge base.
+The purpose of these writeups is **learning, documentation, and building a reusable security knowledge base**.
 
-Disclaimer
+---
 
-All testing documented in this repository is performed against Hack The Box labs and other intentionally vulnerable environments for educational purposes.
+## Disclaimer
+
+All testing documented in this repository is performed against **Hack The Box labs and other intentionally vulnerable environments** for educational purposes.
 
 Do not use these techniques against systems without explicit authorization.
 
+---
+
 <p align="center">
-
-Enumerate → Understand → Exploit → Learn → Repeat
-
-<br>
-
-The grind continues.
-
-</p> ```
+  <b>Enumerate → Understand → Exploit → Learn → Repeat</b>
+  <br>
+  <i>The grind continues.</i>
+</p>
