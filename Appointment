@@ -102,7 +102,7 @@ Login
 
 ### Login Page
 
-![Appointment login page](screenshots/02-login-page.png)
+![Appointment login page]
 
 At this stage, the main attack surface appeared to be the login form.
 
@@ -159,7 +159,7 @@ password=<value>
 
 ### Source Enumeration
 
-![Login form source](screenshots/03-source-code.png)
+![Login form source]
 
 ---
 
@@ -313,7 +313,7 @@ Congratulations!
 
 ### Successful Authentication
 
-![Successful authentication](screenshots/05-auth-bypass.png)
+![Successful authentication]
 
 This confirmed that the login form was vulnerable to SQL injection.
 
@@ -331,7 +331,7 @@ e3d0796d002a446c0e622226f42e9672
 
 ### Flag
 
-![Appointment flag](screenshots/06-flag.png)
+![Appointment flag]
 
 ---
 
